@@ -10,7 +10,7 @@ module.exports = {
             },
         },
         fontFamily: {
-            outfit: "Outfit, sans-serif",
+            outfit: ["Outfit", "sans-serif"],
         },
         container: {
             center: true,
