@@ -4,4 +4,6 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import "~/assets/style.css";
+</script>
