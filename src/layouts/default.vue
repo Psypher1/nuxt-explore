@@ -4,6 +4,8 @@ import "~/assets/style.css";
 
 <template>
     <div>
-        <h1 class="text-3xl font-semibold text-green-500 font-outfit">home</h1>
+        <main class="">
+            <slot />
+        </main>
     </div>
 </template>

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./index.html", "./src/**/*.{vue,js}"],
+    content: ["./index.html", "./src/**/*.{vue,js,ts}"],
     theme: {
         extend: {
             colors: {
@@ -9,7 +9,9 @@ module.exports = {
                 "dire-wolf": "#292727",
             },
         },
-
+        fontFamily: {
+            outfit: "Outfit, sans-serif",
+        },
         container: {
             center: true,
             padding: "2rem",
