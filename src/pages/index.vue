@@ -1,15 +1,15 @@
 <script setup>
-import "~/assets/css/style.css";
+useSeoMeta({
+    title: "Nuxtcipes",
+    description: "Recipes for you to cook!",
+});
 </script>
 
 <template>
     <div class="container border border-red-500">
-        <h1 class="text-3xl font-semibold text-green-500 font-outfit">home</h1>
+        <h1 class="text-3xl font-semibold text-green-500">home</h1>
+        <!-- <img src="/images/icon.png" alt="" /> -->
     </div>
 </template>
 
-<style scoped>
-h1 {
-    font-family: Outfit, sans-serif;
-}
-</style>
+<style></style>
