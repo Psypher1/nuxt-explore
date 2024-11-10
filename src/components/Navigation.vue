@@ -1,14 +1,23 @@
 <script setup></script>
+
 <template>
-    <header class="py-4 border-b">
-        <nav class="flex container items-center">
-            <a href="" class="flex gap-1 items-center">
-                <!-- <img class="w- 14" src="/images/icon.png" alt=" a green icon" /> -->
-                <span class="text-2xl font-semiSbold">Nuxtcipes</span>
-            </a>
-            <ul class="flex gap-6 ml-auto text-xl font-bold capitalize">
+    <header class="py-4 border-b shadow">
+        <nav class="max-w-screen-xl mx-auto px-4 flex items-center">
+            <NuxtLink to="/" class="flex gap-1 items-center">
+                <NuxtImg
+                    class="w-12"
+                    src="/images/icon.png"
+                    alt=" a green icon"
+                />
+
+                <span class="text-2xl font-semibold">Nuxtcipes</span>
+            </NuxtLink>
+            <ul class="flex gap-6 ml-auto text-xl capitalize">
                 <li>
-                    <a href="">Home</a>
+                    <NuxtLink to="/">Home</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink to="/about">About</NuxtLink>
                 </li>
             </ul>
         </nav>
