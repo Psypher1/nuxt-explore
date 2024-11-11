@@ -1,5 +1,5 @@
 <script setup>
-const { data, error } = useFetch("https://dummyjson.com/recipes?limit=12");
+const { data, error } = await useFetch("https://dummyjson.com/recipes?limit=12");
 
 useSeoMeta({
     title: "Nuxtcipes",
@@ -8,7 +8,7 @@ useSeoMeta({
 </script>
 
 <template>
-    <section class="max-w-screen-xl mx-auto px-8 py-20">
+    <section class="container max-w-screen-xl mx-auto px-8 py-20">
         <div class="grid md:grid-cols-2 place-items-center gap-10">
             <div class="text-center md:text-left">
                 <h1 class="text-5xl font-semibold text-balance">
@@ -39,7 +39,7 @@ useSeoMeta({
                     sizes="100vw sm:50vw"
                     densities="x1"
                     :src="recipe.image"
-                    alt="{{ recipe.name }}"
+                    :alt="recipe.name"
                 />
                 <div class="p-4">
                     <h3 class="font-semibold text-lg md:text-xl lg:text-2xl">
