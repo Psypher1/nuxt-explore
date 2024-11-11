@@ -1,9 +1,17 @@
 <script setup>
-const { data, error } = await useFetch("https://dummyjson.com/recipes?limit=12");
+const { data, error } = await useFetch("https://dummyjson.com/recipes?limit=15");
 
 useSeoMeta({
-    title: "Nuxtcipes",
+    title: "Nuxtcipes - Let's get cooking",
     description: "Recipes for you to cook!",
+    ogTitle: "Nuxtcipes",
+    ogDescription: "Recipes for you to cook!",
+    ogImage: "/nuxt-course-hero.png",
+    ogUrl: `http:localhost:3000`,
+    twitterTitle: "Nuxtcipes",
+    twitterDescription: "Recipes for you to cook!",
+    twitterImage: "nuxt-course-hero.png",
+    twitterCard: "summary",
 });
 </script>
 
@@ -32,10 +40,11 @@ useSeoMeta({
     <section class="max-w-screen-xl mx-auto px-8">
         <h2 class="text-3xl lg:text-4xl font-semibold">Discover, Create, Share</h2>
         <p class="text-lg lg:text-xl mt-2">Check out our most popular recipes!</p>
-        <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div v-if="!error" class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <article v-for="recipe in data?.recipes" :key="recipe.id" class="shadow-md rounded-md">
                 <NuxtImg
                     class="rounded-t-md"
+                    format="png"
                     sizes="100vw sm:50vw"
                     densities="x1"
                     :src="recipe.image"
@@ -68,6 +77,7 @@ useSeoMeta({
                 </div>
             </article>
         </div>
+        <p v-else>Something went kapoot</p>
     </section>
 </template>
 

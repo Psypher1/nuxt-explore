@@ -3,6 +3,26 @@
 const { id } = useRoute().params;
 
 const { data: recipe, error } = await useFetch(`https://dummyjson.com/recipes/${id}`);
+
+useSeoMeta({
+    title: recipe.value?.name,
+    description: "Recipes for you to cook!",
+    ogTitle: recipe.value?.name,
+    ogDescription: "Recipes for you to cook!",
+    ogImage: recipe.value?.image,
+    ogUrl: `http:localhost:3001/recipes/${recipe.value?.id}`,
+    twitterTitle: recipe.value?.name,
+    twitterDescription: "Recipes for you to cook!",
+    twitterImage: recipe.value?.image,
+    twitterCard: "summary",
+});
+
+if (error.value) {
+    throw createError({
+        statusCode: error.value?.statusCode,
+        statusMessage: error.value?.statusMessage,
+    });
+}
 </script>
 
 @ts-ignore
@@ -31,6 +51,7 @@ const { data: recipe, error } = await useFetch(`https://dummyjson.com/recipes/${
         <NuxtImg
             :src="recipe?.image"
             densities="x1"
+            format="png"
             sizes="xs:100vw sm:100vw md:100vw lg:100vw"
             class="mt-6 w-full max-h-[500px] object-cover rounded-md shadow-sm"
             :alt="recipe?.name"
